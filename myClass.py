@@ -26,3 +26,14 @@ class FileManager:
             return "Content appended successfully."
         except Exception as e:
             return f"An error occurred: {str(e)}"
+        
+    def delete_file(self):
+        import os
+        try:
+            os.remove(self.file_path)
+            return "File deleted successfully."
+        except FileNotFoundError:
+            return "File not found."
+        except Exception as e:
+            return f"An error occurred: {str(e)}"
+        
